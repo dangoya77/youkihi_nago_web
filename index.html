@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -153,8 +153,16 @@
 const hamburger = document.getElementById("hamburger");
 const nav = document.getElementById("nav");
 
+// 開閉
 hamburger.addEventListener("click", () => {
   nav.classList.toggle("open");
+});
+
+// メニュークリックで閉じる（←追加）
+document.querySelectorAll("#nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+  });
 });
 </script>
 
