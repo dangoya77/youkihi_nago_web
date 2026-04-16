@@ -5,16 +5,26 @@ body {
   color: #fff;
 }
 
-/* ヘッダー */
+/* ヘッダー（←完全に作り直し） */
 header {
   position: fixed;
   top: 0;
   width: 100%;
   background: #111;
-  padding: 15px 15px; /* ←左右を明示 */
-  text-align: center;
+  padding: 10px 15px;
   z-index: 1000;
-  box-sizing: border-box; /* ←これが超重要（はみ出し防止） */
+
+  display: flex;              /* ←これが本質 */
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+/* タイトル */
+header h1 {
+  font-size: 16px;
+  margin: 0;
 }
 
 /* アンカーずれ防止 */
@@ -22,15 +32,11 @@ section {
   scroll-margin-top: 80px;
 }
 
-/* ハンバーガー */
+/* ハンバーガー（絶対配置やめる） */
 .hamburger {
-  position: absolute;
-  right: 10px; /* ←少し内側に */
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 28px;
   cursor: pointer;
-  padding: 8px 12px; /* ←押しやすく */
+  padding: 10px;              /* 押しやすさ改善 */
 }
 
 /* ナビ */
@@ -40,6 +46,7 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   background: #000;
+  width: 100%;               /* ←重要：横幅フルに */
 }
 
 nav a {
@@ -120,6 +127,7 @@ nav.open {
 
   nav {
     display: flex;
+    width: auto;
   }
 
   .main-visual {
